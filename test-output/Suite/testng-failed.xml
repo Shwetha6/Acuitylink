@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="Logins.Acuity_admin_login">
+        <methods>
+          <include name="acuity"/>
+        </methods>
+      </class> <!-- Logins.Acuity_admin_login -->
+      <class name="Logins.HI_login">
+        <methods>
+          <include name="hilogin"/>
+        </methods>
+      </class> <!-- Logins.HI_login -->
+      <class name="Logins.ASP_login">
+        <methods>
+          <include name="asp"/>
+        </methods>
+      </class> <!-- Logins.ASP_login -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
