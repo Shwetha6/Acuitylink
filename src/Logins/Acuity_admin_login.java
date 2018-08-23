@@ -44,6 +44,8 @@ public class Acuity_admin_login
 	    a.moveToElement(ele).perform(); 
 	    driver.findElement(By.linkText("Logout")).click();
 	    driver.close();
+	    
+	    
 		
 	}	
 		
