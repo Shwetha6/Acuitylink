@@ -4,20 +4,44 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import Design1.Constant_Acuity;
+import Design1.Data_Acuity;
 
 public class ASP_reg 
 {
+	WebDriver driver;
+	@BeforeTest
+	public void init3()
+	{
+		System.setProperty("webdriver.chrome.driver","./Reqfiles/chromedriver.exe");
+		driver= new ChromeDriver();
+		driver.get("https://uat.acuity-link.com/acuityLink");  //Enter the URL
+		driver.manage().window().maximize();
+	}
 	@Test
 	public void aspreg() throws InterruptedException
 	{
-	System.setProperty("webdriver.chrome.driver","./Reqfiles/chromedriver.exe");
-	WebDriver driver= new ChromeDriver();
-	driver.get("https://uat.acuity-link.com/acuityLink");  //Enter the URL
-	driver.manage().window().maximize();
+		try
+		{
+			Data_Acuity.setExcelFile(Constant_Acuity.Excelpath,"Sheet2");
+			String aspname=Data_Acuity.getCellData(2, 0); 
+			String streetaddress=Data_Acuity.getCellData(2, 1);
+			String zip=Data_Acuity.getCellData(2, 2);
+			String aspLicenseNo=Data_Acuity.getCellData(2, 3);
+			String firstName=Data_Acuity.getCellData(2, 4);
+			String lastName=Data_Acuity.getCellData(2, 5);
+			String email=Data_Acuity.getCellData(2, 6);
+			String phoneNumber=Data_Acuity.getCellData(2, 7);
+			
+			
+
 	driver.findElement(By.xpath("(//button[@id=''])[2]")).click();
     driver.findElement(By.name("aspName")).clear();
-    driver.findElement(By.name("aspName")).sendKeys("ASP");
+    driver.findElement(By.name("aspName")).sendKeys(aspname);
     driver.findElement(By.name("aspName")).sendKeys(Keys.TAB);
     Thread.sleep(10000);
     
@@ -31,26 +55,33 @@ public class ASP_reg
     Thread.sleep(10000);
     driver.findElement(By.id("streetAddress")).click();
     driver.findElement(By.id("streetAddress")).clear();
-    driver.findElement(By.id("streetAddress")).sendKeys("11 Ridgewood Drive");
+    driver.findElement(By.id("streetAddress")).sendKeys(streetaddress);
     driver.findElement(By.id("zipCode")).click();
-    driver.findElement(By.id("zipCode")).sendKeys("02115");
+    driver.findElement(By.id("zipCode")).sendKeys(zip);
     driver.findElement(By.name("aspLicenseNumber")).click();
     driver.findElement(By.name("aspLicenseNumber")).clear();
-    driver.findElement(By.name("aspLicenseNumber")).sendKeys("1345");
+    driver.findElement(By.name("aspLicenseNumber")).sendKeys(aspLicenseNo);
     driver.findElement(By.name("firstName")).clear();
-    driver.findElement(By.name("firstName")).sendKeys("Shwetha");
+    driver.findElement(By.name("firstName")).sendKeys(firstName);
     driver.findElement(By.name("lastName")).clear();
-    driver.findElement(By.name("lastName")).sendKeys("K");
+    driver.findElement(By.name("lastName")).sendKeys(lastName);
     Thread.sleep(10000);
-    driver.findElement(By.xpath("(//input[@name='userEmail'])[2]")).sendKeys("sl1@grr.la");
+    driver.findElement(By.xpath("(//input[@name='userEmail'])[2]")).sendKeys(email);
     driver.findElement(By.name("phoneNumber")).clear();
-    driver.findElement(By.name("phoneNumber")).sendKeys("1234567890");
+    driver.findElement(By.name("phoneNumber")).sendKeys(phoneNumber);
     Thread.sleep(5000);
     driver.findElement(By.id("aspSubmit")).click();
-    
-	
-	
-	
+		}
+		catch (Exception e) 
+		{
+			 //TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		}
+	@AfterTest
+	public void close()
+	{
+		driver.close();
 	}
-
-}
+	
+} 

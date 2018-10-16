@@ -8,16 +8,6 @@
           <include name="acuity"/>
         </methods>
       </class> <!-- Logins.Acuity_admin_login -->
-      <class name="Logins.HI_login">
-        <methods>
-          <include name="hilogin"/>
-        </methods>
-      </class> <!-- Logins.HI_login -->
-      <class name="Logins.ASP_login">
-        <methods>
-          <include name="asp"/>
-        </methods>
-      </class> <!-- Logins.ASP_login -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -5,7 +5,9 @@
     <classes>
       <class name="Logins.HI_login">
         <methods>
-          <include name="hilogin"/>
+          <include name="HiFillPatientInformationALSCustom"/>
+          <include name="HiLogin"/>
+          <include name="init2"/>
         </methods>
       </class> <!-- Logins.HI_login -->
     </classes>
