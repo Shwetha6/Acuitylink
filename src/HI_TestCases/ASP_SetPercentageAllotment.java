@@ -25,7 +25,7 @@ import org.testng.asserts.SoftAssert;
 import Design1.Constant_Acuity;
 import Design1.Data_Acuity;
 
-public class ASP_SetPercentageAllotment 
+public class ASP_SetPercentageAllotment extends Add_ASP_CustomRotation 
 {
 	WebDriver driver;
 	private java.util.List<WebElement> option; 
@@ -41,11 +41,16 @@ public class ASP_SetPercentageAllotment
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	}*/
 	
-	@Test(priority=10)
+	@Test
 	public void SetPercentageListAsp()
 	{
 		try
 		{
+			
+			Add_ASP_CustomRotation setpercent = new Add_ASP_CustomRotation();
+			driver = setpercent.CustomRotationSection();
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			
 		WebElement ele14=driver.findElement(By.xpath("//button[@class='btn aq-btn allotmentPopupClass'][contains(text(),'Set % of Allotment')]"));
 		String t12=ele14.getText();
 		System.out.println("Button name is:"+ t12);

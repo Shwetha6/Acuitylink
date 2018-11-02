@@ -25,7 +25,7 @@ import org.testng.asserts.SoftAssert;
 import Design1.Constant_Acuity;
 import Design1.Data_Acuity;
 
-public class ASP_Pagination 
+public class ASP_Pagination extends ASP_Page
 {
 	WebDriver driver;
 	private java.util.List<WebElement> option; 
@@ -41,11 +41,15 @@ public class ASP_Pagination
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	}*/
 	
-	@Test(priority=6)
+	@Test
 	public void Pagination() throws InterruptedException
 	{
 		try
 		{
+			ASP_Page pag = new ASP_Page();
+			driver = pag.VerifyAspPage();
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			
     Thread.sleep(2000);
     driver.findElement(By.xpath("//a[@class='paginate_button ']")).click();
     System.out.println("Pagination is clickable");

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
     <line>
       <![CDATA[Title of the page:Acuity Link]]>
@@ -13,17 +13,106 @@
     <line>
       <![CDATA[HI Validation successful]]>
     </line>
+    <line>
+      <![CDATA[Selection logic page is displayed]]>
+    </line>
+    <line>
+      <![CDATA[Custom Rotation section is present]]>
+    </line>
+    <line>
+      <![CDATA[Ambulance Service Providers pop up is displayed: Hence Add ASP button is present and clickable in Custom Rotation section ]]>
+    </line>
+    <line>
+      <![CDATA[ASP's in the pop up are listed]]>
+    </line>
+    <line>
+      <![CDATA[Remove button is present:Hence ASP has been added in the Custom Rotation section]]>
+    </line>
+    <line>
+      <![CDATA[Set % of Allotment button is present and clickable]]>
+    </line>
+    <line>
+      <![CDATA[% set to 100%]]>
+    </line>
+    <line>
+      <![CDATA[Title of the page:Acuity Link]]>
+    </line>
+    <line>
+      <![CDATA[Login successful]]>
+    </line>
+    <line>
+      <![CDATA[Button present is:Create a Service Request]]>
+    </line>
+    <line>
+      <![CDATA[HI Validation successful]]>
+    </line>
+    <line>
+      <![CDATA[Ambulance service provider page is displayed]]>
+    </line>
+    <line>
+      <![CDATA[New ASP created]]>
+    </line>
+    <line>
+      <![CDATA[Title of the page:Acuity Link]]>
+    </line>
+    <line>
+      <![CDATA[Login successful]]>
+    </line>
+    <line>
+      <![CDATA[Button present is:Create a Service Request]]>
+    </line>
+    <line>
+      <![CDATA[HI Validation successful]]>
+    </line>
+    <line>
+      <![CDATA[Selection logic page is displayed]]>
+    </line>
+    <line>
+      <![CDATA[Order Number and Even Rotation section is present]]>
+    </line>
+    <line>
+      <![CDATA[Ambulance Service Providers pop up is displayed: Hence Add ASP button is present and clickable in Order Number and Even Rotation section]]>
+    </line>
+    <line>
+      <![CDATA[ASP's in the pop up are listed]]>
+    </line>
+    <line>
+      <![CDATA[Remove button is present:Hence ASP has been added in the Order Number and Even Rotation section]]>
+    </line>
+    <line>
+      <![CDATA[Title of the page:Acuity Link]]>
+    </line>
+    <line>
+      <![CDATA[Login successful]]>
+    </line>
+    <line>
+      <![CDATA[Button present is:Create a Service Request]]>
+    </line>
+    <line>
+      <![CDATA[HI Validation successful]]>
+    </line>
+    <line>
+      <![CDATA[Selection logic page is displayed]]>
+    </line>
+    <line>
+      <![CDATA[Exclusive Ambulance section is present]]>
+    </line>
+    <line>
+      <![CDATA[Ambulance Service Providers pop up is displayed: Hence Add ASP button is present and clickable in Exclusive Ambulance section ]]>
+    </line>
+    <line>
+      <![CDATA[ASP's in the pop up are listed]]>
+    </line>
+    <line>
+      <![CDATA[Remove button is present:Hence ASP has been added in the Exclusive Ambulance section]]>
+    </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="81604" started-at="2018-10-15T13:57:48Z" finished-at="2018-10-15T13:59:09Z">
+  <suite name="Suite" duration-ms="209366" started-at="2018-10-31T09:44:46Z" finished-at="2018-10-31T09:48:15Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="81604" started-at="2018-10-15T13:57:48Z" finished-at="2018-10-15T13:59:09Z">
-      <class name="Logins.HI_login">
-        <test-method status="PASS" signature="init2()[pri:0, instance:Logins.HI_login@7e2d773b]" name="init2" is-config="true" duration-ms="11801" started-at="2018-10-15T13:57:48Z" finished-at="2018-10-15T13:57:59Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- init2 -->
-        <test-method status="PASS" signature="HiLogin()[pri:1, instance:Logins.HI_login@7e2d773b]" name="HiLogin" duration-ms="9755" started-at="2018-10-15T13:57:59Z" finished-at="2018-10-15T13:58:09Z">
+    <test name="Test" duration-ms="209366" started-at="2018-10-31T09:44:46Z" finished-at="2018-10-31T09:48:15Z">
+      <class name="HI_TestCases.ASP_OrderNumberAnd_EvenRotation">
+        <test-method status="PASS" signature="OrderNumberEvenRotationSection()[pri:0, instance:HI_TestCases.ASP_OrderNumberAnd_EvenRotation@467aecef]" name="OrderNumberEvenRotationSection" duration-ms="52495" started-at="2018-10-31T09:46:29Z" finished-at="2018-10-31T09:47:22Z">
           <reporter-output>
             <line>
               <![CDATA[Title of the page:Acuity Link]]>
@@ -37,13 +126,120 @@
             <line>
               <![CDATA[HI Validation successful]]>
             </line>
+            <line>
+              <![CDATA[Selection logic page is displayed]]>
+            </line>
+            <line>
+              <![CDATA[Order Number and Even Rotation section is present]]>
+            </line>
+            <line>
+              <![CDATA[Ambulance Service Providers pop up is displayed: Hence Add ASP button is present and clickable in Order Number and Even Rotation section]]>
+            </line>
+            <line>
+              <![CDATA[ASP's in the pop up are listed]]>
+            </line>
+            <line>
+              <![CDATA[Remove button is present:Hence ASP has been added in the Order Number and Even Rotation section]]>
+            </line>
           </reporter-output>
-        </test-method> <!-- HiLogin -->
-        <test-method status="PASS" signature="HiFillPatientInformationWCTRoundcustompickdefaultdest()[pri:2, instance:Logins.HI_login@7e2d773b]" name="HiFillPatientInformationWCTRoundcustompickdefaultdest" duration-ms="60037" started-at="2018-10-15T13:58:09Z" finished-at="2018-10-15T13:59:09Z">
+        </test-method> <!-- OrderNumberEvenRotationSection -->
+      </class> <!-- HI_TestCases.ASP_OrderNumberAnd_EvenRotation -->
+      <class name="HI_TestCases.Add_ASP_ExclusiveAmbSelection">
+        <test-method status="PASS" signature="ExclusiveAmbulanceSection()[pri:0, instance:HI_TestCases.Add_ASP_ExclusiveAmbSelection@4d50efb8]" name="ExclusiveAmbulanceSection" duration-ms="53630" started-at="2018-10-31T09:47:22Z" finished-at="2018-10-31T09:48:15Z">
           <reporter-output>
+            <line>
+              <![CDATA[Title of the page:Acuity Link]]>
+            </line>
+            <line>
+              <![CDATA[Login successful]]>
+            </line>
+            <line>
+              <![CDATA[Button present is:Create a Service Request]]>
+            </line>
+            <line>
+              <![CDATA[HI Validation successful]]>
+            </line>
+            <line>
+              <![CDATA[Selection logic page is displayed]]>
+            </line>
+            <line>
+              <![CDATA[Exclusive Ambulance section is present]]>
+            </line>
+            <line>
+              <![CDATA[Ambulance Service Providers pop up is displayed: Hence Add ASP button is present and clickable in Exclusive Ambulance section ]]>
+            </line>
+            <line>
+              <![CDATA[ASP's in the pop up are listed]]>
+            </line>
+            <line>
+              <![CDATA[Remove button is present:Hence ASP has been added in the Exclusive Ambulance section]]>
+            </line>
           </reporter-output>
-        </test-method> <!-- HiFillPatientInformationWCTRoundcustompickdefaultdest -->
-      </class> <!-- Logins.HI_login -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- ExclusiveAmbulanceSection -->
+      </class> <!-- HI_TestCases.Add_ASP_ExclusiveAmbSelection -->
+      <class name="HI_TestCases.ASP_SetPercentageAllotment">
+        <test-method status="PASS" signature="SetPercentageListAsp()[pri:0, instance:HI_TestCases.ASP_SetPercentageAllotment@2a742aa2]" name="SetPercentageListAsp" duration-ms="53406" started-at="2018-10-31T09:44:46Z" finished-at="2018-10-31T09:45:39Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Title of the page:Acuity Link]]>
+            </line>
+            <line>
+              <![CDATA[Login successful]]>
+            </line>
+            <line>
+              <![CDATA[Button present is:Create a Service Request]]>
+            </line>
+            <line>
+              <![CDATA[HI Validation successful]]>
+            </line>
+            <line>
+              <![CDATA[Selection logic page is displayed]]>
+            </line>
+            <line>
+              <![CDATA[Custom Rotation section is present]]>
+            </line>
+            <line>
+              <![CDATA[Ambulance Service Providers pop up is displayed: Hence Add ASP button is present and clickable in Custom Rotation section ]]>
+            </line>
+            <line>
+              <![CDATA[ASP's in the pop up are listed]]>
+            </line>
+            <line>
+              <![CDATA[Remove button is present:Hence ASP has been added in the Custom Rotation section]]>
+            </line>
+            <line>
+              <![CDATA[Set % of Allotment button is present and clickable]]>
+            </line>
+            <line>
+              <![CDATA[% set to 100%]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- SetPercentageListAsp -->
+      </class> <!-- HI_TestCases.ASP_SetPercentageAllotment -->
+      <class name="HI_TestCases.Add_New_ASP">
+        <test-method status="PASS" signature="AddNewAsp()[pri:0, instance:HI_TestCases.Add_New_ASP@7e2d773b]" name="AddNewAsp" duration-ms="49816" started-at="2018-10-31T09:45:39Z" finished-at="2018-10-31T09:46:29Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Title of the page:Acuity Link]]>
+            </line>
+            <line>
+              <![CDATA[Login successful]]>
+            </line>
+            <line>
+              <![CDATA[Button present is:Create a Service Request]]>
+            </line>
+            <line>
+              <![CDATA[HI Validation successful]]>
+            </line>
+            <line>
+              <![CDATA[Ambulance service provider page is displayed]]>
+            </line>
+            <line>
+              <![CDATA[New ASP created]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- AddNewAsp -->
+      </class> <!-- HI_TestCases.Add_New_ASP -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

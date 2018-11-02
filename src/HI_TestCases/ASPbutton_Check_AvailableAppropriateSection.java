@@ -25,7 +25,7 @@ import org.testng.asserts.SoftAssert;
 import Design1.Constant_Acuity;
 import Design1.Data_Acuity;
 
-public class ASPbutton_Check_AvailableAppropriateSection 
+public class ASPbutton_Check_AvailableAppropriateSection extends Display_Selectionlogic
 {
 	WebDriver driver;
 	private java.util.List<WebElement> option; 
@@ -42,11 +42,16 @@ public class ASPbutton_Check_AvailableAppropriateSection
 	}*/
 
 	//To check whether Add ASP button is present in the Available appropriate ASP section
-	@Test(priority=12)
+	@Test
 	public void AvailableAppropriateASPSection()
 	{
 		try
 		{
+			
+			Display_Selectionlogic avap = new Display_Selectionlogic();
+			driver = avap.VerifySelectionLogicPage();
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			
 	WebElement ele20=driver.findElement(By.xpath("//h2[@class='font26'][contains(text(),'Available appropriate ASP ')]"));
 	String t18=ele20.getText();
 	System.out.println("Title:"+ t18);

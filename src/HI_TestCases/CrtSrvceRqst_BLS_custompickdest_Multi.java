@@ -25,7 +25,7 @@ import org.testng.asserts.SoftAssert;
 import Design1.Constant_Acuity;
 import Design1.Data_Acuity;
 
-public class CrtSrvceRqst_BLS_custompickdest_Multi 
+public class CrtSrvceRqst_BLS_custompickdest_Multi extends HI_Login
 {
 	WebDriver driver;
 	private java.util.List<WebElement> option; 
@@ -46,6 +46,12 @@ public class CrtSrvceRqst_BLS_custompickdest_Multi
 	{
 		try
 		{
+			
+			HI_Login bls3 = new HI_Login();
+			driver = bls3.hiLogin();
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			
+			Data_Acuity.setExcelFile(Constant_Acuity.Excelpath,"Sheet1");
 			String firstname=Data_Acuity.getCellData(23, 1); 
 			String lastname=Data_Acuity.getCellData(23, 2);
 			String dob=Data_Acuity.getCellData(23, 3);
@@ -71,7 +77,7 @@ public class CrtSrvceRqst_BLS_custompickdest_Multi
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("//button[@class='aq-btn highlightLabel notHover1'][contains(text(),'Create a Service Request')]")).click();
 			driver.findElement(By.xpath("//span[@class='filter-option pull-left'][contains(text(),'Select Capability')]")).click();
-			driver.findElement(By.xpath("//html[1]/body[1]/div[3]/div[2]/div[1]/div[1]/div[3]/form[1]/div[1]/fieldset[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[3]/a/span[1]")).click();				
+			driver.findElement(By.xpath("//span[@class='text'][contains(text(), 'Basic')]")).click();				
 			driver.findElement(By.xpath("//span[@class='filter-option pull-left'][contains(text(),'One-Way')]")).click();
 			driver.findElement(By.xpath("//span[@class='text'][contains(text(), 'Multi-Destination')]")).click();
 			driver.findElement(By.xpath("//label[@class='aq-radio-label'][contains(text(),'No')]")).click();
@@ -87,7 +93,7 @@ public class CrtSrvceRqst_BLS_custompickdest_Multi
 	driver.findElement(By.id("patientWeight")).sendKeys(weight);
 	driver.findElement(By.xpath("//span[@class='filter-option pull-left'][contains(text(), 'Pounds')]")).click();
 	driver.findElement(By.xpath("//span[@class='text'][contains(text(), 'Kilograms')]")).click();
-	driver.findElement(By.xpath("//div[@id='puInfoTypeDivId0']//label[@class='aq-radio-label'][2]")).click();
+	driver.findElement(By.xpath("//div[@id='puInfoTypeDivId0']//label[contains(text(), 'Custom')]")).click();
 	Thread.sleep(3000);
 	driver.findElement(By.id("puFacultyName0")).sendKeys(pickup);
 	driver.findElement(By.id("streetAddressPU0")).sendKeys(streetaddress);
@@ -95,7 +101,7 @@ public class CrtSrvceRqst_BLS_custompickdest_Multi
 	Robot blsmul=new Robot();
 	blsmul.keyPress(KeyEvent.VK_TAB);
 	Thread.sleep(3000);
-	driver.findElement(By.xpath("//div[@id='destInfoTypeDivId0']//label[@class='aq-radio-label'][2]")).click();
+	driver.findElement(By.xpath("//div[@id='destInfoTypeDivId0']//label[contains(text(), 'Custom')]")).click();
 	driver.findElement(By.xpath("//div[@id='customHiDivId0']//label[@class='aq-checkbox-label marL5']")).click();
 	driver.findElement(By.id("destFacultyName0")).sendKeys(destination);
 	driver.findElement(By.id("streetAddress0")).sendKeys(deststreet);
@@ -140,6 +146,7 @@ public class CrtSrvceRqst_BLS_custompickdest_Multi
 	
 	
 	driver.findElement(By.id("puScheduledDateTime3")).sendKeys(datetime3);
+	Thread.sleep(3000);
 	driver.findElement(By.id("addAnotherDestBtn")).click();
 	Thread.sleep(2000);
 	driver.findElement(By.xpath("//div[@id='destInfoTypeDivId4']//label[@class='aq-radio-label'][contains(text(),'Custom Destination Address')]")).click();

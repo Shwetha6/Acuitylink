@@ -25,7 +25,7 @@ import org.testng.asserts.SoftAssert;
 import Design1.Constant_Acuity;
 import Design1.Data_Acuity;
 
-public class CrtSrvceReqst_WCT_defaultpickdest_Multi 
+public class CrtSrvceReqst_WCT_defaultpickdest_Multi extends HI_Login
 {
 
 	WebDriver driver;
@@ -42,11 +42,16 @@ public class CrtSrvceReqst_WCT_defaultpickdest_Multi
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	}*/
 	
-	@Test(priority=54)
+	@Test
 	public void HiFillPatientInformationWCTDefaultMulti()
 	{
 		try
 		{
+			HI_Login w7 = new HI_Login();
+			driver = w7.hiLogin();
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			
+			Data_Acuity.setExcelFile(Constant_Acuity.Excelpath,"Sheet1");
 			String firstname=Data_Acuity.getCellData(23, 1); 
 			String lastname=Data_Acuity.getCellData(23, 2);
 			String dob=Data_Acuity.getCellData(23, 3);
@@ -68,7 +73,7 @@ public class CrtSrvceReqst_WCT_defaultpickdest_Multi
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("//button[@class='aq-btn highlightLabel notHover1'][contains(text(),'Create a Service Request')]")).click();
 			driver.findElement(By.xpath("//span[@class='filter-option pull-left'][contains(text(),'Select Capability')]")).click();
-			driver.findElement(By.xpath("/html[1]/body[1]/div[3]/div[2]/div[1]/div[1]/div[3]/form[1]/div[1]/fieldset[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[5]/a[1]/span[1]")).click();
+			driver.findElement(By.xpath("//span[@class='text'][contains(text(), 'Wheelchair')]")).click();
 			driver.findElement(By.xpath("//span[@class='filter-option pull-left'][contains(text(),'One-Way')]")).click();
 			driver.findElement(By.xpath("//span[@class='text'][contains(text(), 'Multi-Destination')]")).click();
 			driver.findElement(By.xpath("//label[@class='aq-radio-label'][contains(text(),'No')]")).click();
@@ -96,12 +101,14 @@ public class CrtSrvceReqst_WCT_defaultpickdest_Multi
 	driver.findElement(By.xpath("//span[@class='text'][contains(text(), 'Unit1')]")).click();
 	driver.findElement(By.id("puRoomNumber0")).sendKeys(roomno);
 	
-	driver.findElement(By.xpath("(//input[@class='form-control aq-inp ui-autocomplete-input'])[2]")).sendKeys(desthi);
+	driver.findElement(By.id("searchId0")).sendKeys(desthi);
 	Thread.sleep(4000);
+	
 	Robot wctmuldef=new Robot();
 	wctmuldef.keyPress(KeyEvent.VK_DOWN);	
 	wctmuldef.keyPress(KeyEvent.VK_ENTER);
 	driver.findElement(By.xpath("//span[@class='filter-option pull-left'][contains(text(), 'Choose Building')]")).click();
+	Thread.sleep(3000);
 	driver.findElement(By.xpath("//span[@class='text'][contains(text(), 'Sam')]")).click();
 	Thread.sleep(3000);
 	driver.findElement(By.xpath("//span[@class='filter-option pull-left'][contains(text(), 'Choose Lobby')]")).click();
@@ -121,6 +128,7 @@ public class CrtSrvceReqst_WCT_defaultpickdest_Multi
 	wctmuldef.keyPress(KeyEvent.VK_DOWN);	
 	wctmuldef.keyPress(KeyEvent.VK_ENTER);
 	driver.findElement(By.xpath("//span[@class='filter-option pull-left'][contains(text(), 'Choose Building')]")).click();
+	Thread.sleep(3000);
 	driver.findElement(By.xpath("(//span[@class='text'][contains(text(), 'Sam')])[2]")).click();
 	Thread.sleep(3000);
 	driver.findElement(By.xpath("(//span[@class='filter-option pull-left'][contains(text(), 'Choose Lobby')])")).click();
@@ -140,6 +148,7 @@ public class CrtSrvceReqst_WCT_defaultpickdest_Multi
 	wctmuldef.keyPress(KeyEvent.VK_DOWN);	
 	wctmuldef.keyPress(KeyEvent.VK_ENTER);
 	driver.findElement(By.xpath("//span[@class='filter-option pull-left'][contains(text(), 'Choose Building')]")).click();
+	Thread.sleep(3000);
 	driver.findElement(By.xpath("(//span[@class='text'][contains(text(), 'Sam')])[3]")).click();
 	Thread.sleep(3000);
 	driver.findElement(By.xpath("(//span[@class='filter-option pull-left'][contains(text(), 'Choose Lobby')])")).click();
@@ -158,6 +167,7 @@ public class CrtSrvceReqst_WCT_defaultpickdest_Multi
 	wctmuldef.keyPress(KeyEvent.VK_DOWN);	
 	wctmuldef.keyPress(KeyEvent.VK_ENTER);
 	driver.findElement(By.xpath("//span[@class='filter-option pull-left'][contains(text(), 'Choose Building')]")).click();
+	Thread.sleep(3000);
 	driver.findElement(By.xpath("(//span[@class='text'][contains(text(), 'Sam')])[4]")).click();
 	Thread.sleep(3000);
 	driver.findElement(By.xpath("(//span[@class='filter-option pull-left'][contains(text(), 'Choose Lobby')])")).click();
@@ -175,7 +185,9 @@ public class CrtSrvceReqst_WCT_defaultpickdest_Multi
 	Thread.sleep(4000);
 	wctmuldef.keyPress(KeyEvent.VK_DOWN);	
 	wctmuldef.keyPress(KeyEvent.VK_ENTER);
+	
 	driver.findElement(By.xpath("//span[@class='filter-option pull-left'][contains(text(), 'Choose Building')]")).click();
+	Thread.sleep(3000);
 	driver.findElement(By.xpath("(//span[@class='text'][contains(text(), 'Sam')])[5]")).click();
 	Thread.sleep(3000);
 	driver.findElement(By.xpath("(//span[@class='filter-option pull-left'][contains(text(), 'Choose Lobby')])")).click();

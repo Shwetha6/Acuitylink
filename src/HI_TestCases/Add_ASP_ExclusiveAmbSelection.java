@@ -26,29 +26,23 @@ import org.testng.asserts.SoftAssert;
 import Design1.Constant_Acuity;
 import Design1.Data_Acuity;
 
-public class Add_ASP_ExclusiveAmbSelection 
+public class Add_ASP_ExclusiveAmbSelection extends Display_Selectionlogic
 {
 	WebDriver driver;
 	private java.util.List<WebElement> option; 
 	WebDriverWait wait;
 	
-	/*@BeforeTest
-	public void init4()
-	{
-		System.setProperty("webdriver.chrome.driver","./Reqfiles/chromedriver.exe");
-		driver= new ChromeDriver();
-		driver.get("https://uat.acuity-link.com/acuityLink");  //Enter the URL
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-	}*/
-
-
+	
 	   //To check whether Add ASP button is displayed, clickable and ASP is added in the Exclusive Ambulance section
 		@Test
 		public void ExclusiveAmbulanceSection()
 		{
 			try
 			{
+				Display_Selectionlogic extamb = new Display_Selectionlogic();
+				driver = extamb.VerifySelectionLogicPage();
+				driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+				
 			WebElement ele8=driver.findElement(By.xpath("//h2[@class='font26'][contains(text(), 'Exclusive Ambulance ')]"));
 			String t6=ele8.getText();
 			System.out.println("Title:"+ t6);

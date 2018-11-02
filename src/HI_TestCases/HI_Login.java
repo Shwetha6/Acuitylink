@@ -29,24 +29,36 @@ public class HI_Login {
 		driver= new ChromeDriver();
 		driver.get("https://uat.acuity-link.com/acuityLink");  //Enter the URL
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		
+		//driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	}*/
 	
 	@Test
-	public void HiLogin() throws InterruptedException
+	public WebDriver hiLogin() throws InterruptedException
 	{
 		try
 		{
 			Data_Acuity.setExcelFile(Constant_Acuity.Excelpath,"Sheet1");
-			String email2=Data_Acuity.getCellData(2, 12); 
-			String password2=Data_Acuity.getCellData(2, 13);
+			String email1=Data_Acuity.getCellData(2, 12); 
+			String password1=Data_Acuity.getCellData(2, 13);
+			
+			System.setProperty("webdriver.chrome.driver","./Reqfiles/chromedriver.exe");
+			driver= new ChromeDriver();
+			driver.get("https://uat.acuity-link.com/acuityLink");  //Enter the URL
+			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			
+			
+			if(driver!=null) {
 			wait = new WebDriverWait(driver,6);
-		 
 		
-		driver.findElement(By.id("samlUserEmail")).sendKeys(email2);
-		driver.findElement(By.xpath("//button[@class='btn aq-btn'][contains(text(), 'Next')]")).click();
-		driver.findElement(By.id("password")).sendKeys(password2);
+		
+		driver.findElement(By.id("samlUserEmail")).sendKeys(email1);
+		driver.findElement(By.id("samlLoginBtn")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.id("password")).sendKeys(password1);
 		driver.findElement(By.id("loginBtnId")).click();
+		Thread.sleep(3000);
 		
 		wait.until(ExpectedConditions.titleContains("Acuity Link"));
 		String t= driver.getTitle();
@@ -64,11 +76,17 @@ public class HI_Login {
 		Reporter.log("HI Validation successful", true);
 		Thread.sleep(2000);
 		
+		
+			}else {
+				System.out.println("driver is nnull");
+			}
+			return driver;
 		}
 		catch (Exception e) 
 		{
 			 //TODO Auto-generated catch block
 			e.printStackTrace();
+			return null;
 		} 
 	}
 

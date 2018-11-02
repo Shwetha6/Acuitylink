@@ -12,9 +12,10 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
+import Design1.Constant_Acuity;
 import Design1.Data_Acuity;
 
-public class Profile_Change_Password 
+public class Profile_Change_Password extends HI_Login
 {
 	WebDriver driver;
 	private java.util.List<WebElement> option; 
@@ -26,11 +27,18 @@ public class Profile_Change_Password
 	{
 		try
 		{
+			
+			HI_Login change = new HI_Login();
+			driver = change.hiLogin();
+			Data_Acuity.setExcelFile(Constant_Acuity.Excelpath,"Sheet1");
 			String oldpassword=Data_Acuity.getCellData(17, 7); 
 			String newpassword=Data_Acuity.getCellData(17, 8);
 			String confirmpassword=Data_Acuity.getCellData(17, 9);
 			
-			Thread.sleep(2000);
+			driver.findElement(By.xpath("//img[contains(@src,'avatar.png')]")).click();
+			Thread.sleep(3000);
+			driver.findElement(By.xpath("//li[contains(@class,'linkProf')]/a[1]")).click();
+			Thread.sleep(3000);
 			driver.findElement(By.xpath("//button[@class='aq-btn aq-btn-trans'][contains(text(),'Change Password')]")).click();
 			Thread.sleep(2000);
 			driver.findElement(By.id("oldPassword")).sendKeys(oldpassword);

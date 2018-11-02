@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test thread-count="5" name="Default test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="Logins.HI_login">
+      <class name="HI_TestCases.Remove_ASP_ASPdetailpage">
         <methods>
-          <include name="HiFillPatientInformationALSCustom"/>
-          <include name="HiLogin"/>
-          <include name="init2"/>
+          <include name="RemoveAspFromAspdetailPage"/>
         </methods>
-      </class> <!-- Logins.HI_login -->
+      </class> <!-- HI_TestCases.Remove_ASP_ASPdetailpage -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

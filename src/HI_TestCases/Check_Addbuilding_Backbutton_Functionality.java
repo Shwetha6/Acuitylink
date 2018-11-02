@@ -25,7 +25,7 @@ import org.testng.asserts.SoftAssert;
 import Design1.Constant_Acuity;
 import Design1.Data_Acuity;
 
-public class Check_Addbuilding_Backbutton_Functionality 
+public class Check_Addbuilding_Backbutton_Functionality extends HI_Login
 {
 	WebDriver driver;
 	private java.util.List<WebElement> option; 
@@ -47,6 +47,11 @@ public class Check_Addbuilding_Backbutton_Functionality
 	{
 		try
 		{
+			
+			HI_Login addbuild = new HI_Login();
+			driver = addbuild.hiLogin();	
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			
 			Data_Acuity.setExcelFile(Constant_Acuity.Excelpath,"Sheet1");
 			String buildingname=Data_Acuity.getCellData(11, 5); 
 			String lobbyname=Data_Acuity.getCellData(11, 6);
@@ -55,6 +60,10 @@ public class Check_Addbuilding_Backbutton_Functionality
 			String phoneNumber=Data_Acuity.getCellData(11, 9);
 			
 			
+			driver.findElement(By.xpath("//img[contains(@src,'avatar.png')]")).click();
+			Thread.sleep(3000);
+			driver.findElement(By.xpath("//li[contains(@class,'linkProf')]/a[1]")).click();
+			Thread.sleep(3000);
 			driver.findElement(By.xpath("//button[@class='btn btn-default aq-btn marR15 btn01 aq-btn-1024'][contains(text(),'Add Building Location')]")).click();
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("//button[@class='btn btn-default aq-btn marR15 btn01 aq-btn-1024 hiBuildingDetails'][contains(text(),'Add Building')]")).click();

@@ -25,12 +25,15 @@ import org.testng.asserts.SoftAssert;
 import Design1.Constant_Acuity;
 import Design1.Data_Acuity;
 
-public class ASP_Page {
+public class ASP_Page extends HI_Login{
 	WebDriver driver;
 	private java.util.List<WebElement> option; 
 	WebDriverWait wait;
 	
-	/*@BeforeTest
+	
+	
+	
+/*	@BeforeTest
 	public void init4()
 	{
 		System.setProperty("webdriver.chrome.driver","./Reqfiles/chromedriver.exe");
@@ -41,13 +44,26 @@ public class ASP_Page {
 	}*/
 
 	//To check whether Ambulance Service Provider page is displayed
-			@Test(priority=2)
-			public void VerifyAspPage()
+	
+			@Test
+			public WebDriver VerifyAspPage() throws InterruptedException 
 			{
 				try
 				{
-		driver.findElement(By.xpath("//a[@class='dropdown-toggle'][contains(text(), 'ASPs & Configuration')]")).click();
+				HI_Login log = new HI_Login();
+				driver=log.hiLogin();
+				driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+				
+				if(driver!=null) {
+		WebElement local = driver.findElement(By.xpath("//a[@class='dropdown-toggle'][contains(text(), 'ASPs & Configuration')]"));
+		
+		local.click();}
+				else {
+					System.out.println("driver is null");
+				}
 		Thread.sleep(2000);
+				
+		Thread.sleep(3000);
 		driver.findElement(By.linkText("Ambulance Service Providers")).click();
 		WebElement ele=driver.findElement(By.xpath("//h2[@class='font26 fontW400 marT5 marB20'][contains(text(), 'Ambulance Service Providers')]"));
 		String t2=ele.getText();
@@ -56,14 +72,13 @@ public class ASP_Page {
 		s2.assertEquals(ele, "Ambulance Service Providers");
 		Reporter.log("Ambulance service provider page is displayed", true);
 		Thread.sleep(3000);
-				}
-			catch (Exception e) 
-			{
-				 //TODO Auto-generated catch block
-				e.printStackTrace();
-			} 
+		return driver;	
 		}
-	
-	
-	
+				catch (Exception e) 
+				{
+					 //TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				return null;
+	}
 }

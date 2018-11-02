@@ -25,7 +25,7 @@ import org.testng.asserts.SoftAssert;
 import Design1.Constant_Acuity;
 import Design1.Data_Acuity;
 
-public class CreateServiceReqst_CCT_defaultpickdest_Oneway 
+public class CreateServiceReqst_CCT_defaultpickdest_Oneway extends HI_Login
 {
 	WebDriver driver;
 	private java.util.List<WebElement> option; 
@@ -46,6 +46,12 @@ public class CreateServiceReqst_CCT_defaultpickdest_Oneway
 	{
 		try
 		{
+			
+			HI_Login c1 = new HI_Login();
+			driver = c1.hiLogin();
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			
+			Data_Acuity.setExcelFile(Constant_Acuity.Excelpath,"Sheet1");
 			String firstname=Data_Acuity.getCellData(23, 1); 
 			String lastname=Data_Acuity.getCellData(23, 2);
 			String dob=Data_Acuity.getCellData(23, 3);
@@ -58,7 +64,7 @@ public class CreateServiceReqst_CCT_defaultpickdest_Oneway
 	Thread.sleep(3000);		
 	driver.findElement(By.xpath("//button[@class='aq-btn highlightLabel notHover1'][contains(text(),'Create a Service Request')]")).click();
 	driver.findElement(By.xpath("//span[@class='filter-option pull-left'][contains(text(),'Select Capability')]")).click();
-	driver.findElement(By.xpath("//html[1]/body[1]/div[3]/div[2]/div[1]/div[1]/div[3]/form[1]/div[1]/fieldset[1]/div[2]/div[1]/div[1]/div[1]/ul[1]/li[4]/a[1]/span[1]")).click();
+	driver.findElement(By.xpath("//span[@class='text'][contains(text(), 'Critical')]")).click();
 	driver.findElement(By.xpath("//span[@class='filter-option pull-left'][contains(text(),'One-Way')]")).click();
 	driver.findElement(By.xpath("//span[@class='text'][contains(text(),'One-Way')]")).click();
 	driver.findElement(By.xpath("//label[@class='aq-radio-label'][contains(text(),'No')]")).click();
@@ -84,12 +90,13 @@ public class CreateServiceReqst_CCT_defaultpickdest_Oneway
 	driver.findElement(By.xpath("//span[@class='text'][contains(text(), 'Unit1')]")).click();
 	driver.findElement(By.id("puRoomNumber0")).sendKeys(roomno);
 	
-	driver.findElement(By.xpath("(//input[@class='form-control aq-inp ui-autocomplete-input'])[2]")).sendKeys(desthi);
+	driver.findElement(By.id("searchId0")).sendKeys(desthi);
 	Thread.sleep(4000);
 	Robot cct=new Robot();
 	cct.keyPress(KeyEvent.VK_DOWN);
 	cct.keyPress(KeyEvent.VK_ENTER);
 	driver.findElement(By.xpath("//span[@class='filter-option pull-left'][contains(text(), 'Choose Building')]")).click();
+	Thread.sleep(3000);
 	driver.findElement(By.xpath("//span[@class='text'][contains(text(), 'Sam')]")).click();
 	driver.findElement(By.xpath("//span[@class='filter-option pull-left'][contains(text(), 'Choose Lobby')]")).click();
     Thread.sleep(3000);

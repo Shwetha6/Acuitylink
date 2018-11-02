@@ -14,9 +14,10 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
+import Design1.Constant_Acuity;
 import Design1.Data_Acuity;
 
-public class Edit_Building_Block 
+public class Edit_Building_Block extends HI_Login
 {
 	WebDriver driver;
 	private java.util.List<WebElement> option; 
@@ -37,12 +38,21 @@ public class Edit_Building_Block
 	{
 		try
 		{
+			
+			HI_Login edit = new HI_Login();
+			driver = edit.hiLogin();
+			
+			Data_Acuity.setExcelFile(Constant_Acuity.Excelpath,"Sheet1");
 			String newbuildingname=Data_Acuity.getCellData(17, 1); 
 			String streetAddress=Data_Acuity.getCellData(17, 2);
 			String hiZip=Data_Acuity.getCellData(17, 3);
 			String lobbyname=Data_Acuity.getCellData(17, 4);
 			String unitnamme=Data_Acuity.getCellData(17, 5);
-				
+			
+			driver.findElement(By.xpath("//img[contains(@src,'avatar.png')]")).click();
+			Thread.sleep(3000);
+			driver.findElement(By.xpath("//li[contains(@class,'linkProf')]/a[1]")).click();
+			Thread.sleep(3000);
 			driver.findElement(By.xpath("//button[@class='btn btn-default aq-btn marR15 btn01 aq-btn-1024'][contains(text(),'Add Building Location')]")).click();
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("/html[1]/body[1]/div[3]/div[2]/div[1]/div[3]/div[2]/div[1]/table[1]/tbody[1]/tr[2]/td[1]/a")).click();

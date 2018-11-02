@@ -1,5 +1,6 @@
 package Logins;
 
+import HI_TestCases.ASP_Page;
 import Registration.ASP_reg;
 
 public class Main_class 
@@ -10,6 +11,9 @@ public class Main_class
 	 asp.asp();*/
 	 HI_login hi= new HI_login();
 	 hi.HiLogin();
+	 
+	 ASP_Page asp=new ASP_Page();
+	 asp.VerifyAspPage();
 	
 	/*Acuity_admin_login admin= new Acuity_admin_login();
 	admin.acuity();

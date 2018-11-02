@@ -1,10 +1,13 @@
-
-<suite name="Suite">
-  <test thread-count="5" name="Test">
-  		<parameter name="ip" value ="192.168.0.58"/>
-  		<parameter name="browser" value ="chrome"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Acuitylink">
+  <test thread-count="10" name="Test"  preserve-order="true">
     <classes>
-      <class name="Logins.HI_login"/>
+     <class name="HI_TestCases.CreateServiceReqst_WCT_custompickdest_Oneway"/>
+      <class name="HI_TestCases.CreateServiceReqst_ALS_custompickdest_Oneway"/>
+      <class name="HI_TestCases.CreateServiceReqst_BLS_custompickdest_Oneway"/>
+      <class name="HI_TestCases.CreateServiceReqst_CCT_custompickdest_Oneway"/>
+      
     </classes>
-  </test> 
-  </suite> 
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

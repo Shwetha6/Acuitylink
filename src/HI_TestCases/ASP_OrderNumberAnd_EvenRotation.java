@@ -25,7 +25,7 @@ import org.testng.asserts.SoftAssert;
 import Design1.Constant_Acuity;
 import Design1.Data_Acuity;
 
-public class ASP_OrderNumberAnd_EvenRotation 
+public class ASP_OrderNumberAnd_EvenRotation extends Display_Selectionlogic
 {
 	WebDriver driver;
 	private java.util.List<WebElement> option; 
@@ -47,7 +47,12 @@ public class ASP_OrderNumberAnd_EvenRotation
 	{
 		try
 		{	
-	WebElement ele17=driver.findElement(By.xpath("//h2[contains(text(),'Order Number and Even Rotation')]"));
+			
+		Display_Selectionlogic ord = new Display_Selectionlogic();
+		driver = ord.VerifySelectionLogicPage();
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		
+	    WebElement ele17=driver.findElement(By.xpath("//h2[contains(text(),'Order Number and Even Rotation')]"));
 		String t15=ele17.getText();
 		System.out.println("Title:"+ t15);
 		SoftAssert s11= new SoftAssert();

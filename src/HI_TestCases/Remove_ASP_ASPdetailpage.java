@@ -12,7 +12,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-public class Remove_ASP_ASPdetailpage 
+public class Remove_ASP_ASPdetailpage extends ASP_Page
 {
 	WebDriver driver;
 	private java.util.List<WebElement> option; 
@@ -20,11 +20,16 @@ public class Remove_ASP_ASPdetailpage
 	
 	
 	//To Remove ASP service provider using 'Remove' button in the ASP detail page
-	@Test(priority=5)
+	@Test
 	public void RemoveAspFromAspdetailPage() throws InterruptedException
 	{
 		try
 		{
+			
+			ASP_Page det = new ASP_Page();
+			driver = det.VerifyAspPage();
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			
     Thread.sleep(3000);
     driver.findElement(By.xpath("//a[@class='aspDetail dis-ellipsis']")).click();
     Thread.sleep(3000);
@@ -43,6 +48,7 @@ public class Remove_ASP_ASPdetailpage
 		}
 		catch (Exception e) 
 		{
+			driver.findElement(By.xpath("//button[@class='btn btn-primary'][contains(text(), 'OK')]")).click();
 			 //TODO Auto-generated catch block
 			e.printStackTrace();
 		} 

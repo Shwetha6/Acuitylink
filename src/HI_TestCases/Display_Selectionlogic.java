@@ -12,27 +12,21 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-public class Display_Selectionlogic 
+public class Display_Selectionlogic extends HI_Login
 {
 	WebDriver driver;
 	private java.util.List<WebElement> option; 
 	WebDriverWait wait;
 	
-/*	@BeforeTest
-	public void init4()
-	{
-		System.setProperty("webdriver.chrome.driver","./Reqfiles/chromedriver.exe");
-		driver= new ChromeDriver();
-		driver.get("https://uat.acuity-link.com/acuityLink");  //Enter the URL
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-	}*/
 	
 	@Test
-	public void VerifySelectionLogicPage()
+	public WebDriver VerifySelectionLogicPage()
 	{
 		try
 		{
+			
+			HI_Login sel = new HI_Login();
+			driver = sel.hiLogin();
 driver.findElement(By.xpath("//a[@class='dropdown-toggle'][contains(text(), 'ASPs & Configuration')]")).click();
 Thread.sleep(2000);
 driver.findElement(By.linkText("Selection Logic")).click();
@@ -43,11 +37,13 @@ SoftAssert s7= new SoftAssert();
 s7.assertEquals(ele7, "Selection Logic");
 Reporter.log("Selection logic page is displayed", true);
 Thread.sleep(3000);
+return driver;
 		 }
 		catch (Exception e) 
 		{
 			 //TODO Auto-generated catch block
 			e.printStackTrace();
+			return null;
 		} 
 	}
 	

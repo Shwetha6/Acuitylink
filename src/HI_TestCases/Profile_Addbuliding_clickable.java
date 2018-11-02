@@ -12,7 +12,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-public class Profile_Addbuliding_clickable 
+public class Profile_Addbuliding_clickable extends HI_Login
 {
 	WebDriver driver;
 	private java.util.List<WebElement> option; 
@@ -29,10 +29,14 @@ public class Profile_Addbuliding_clickable
 	}*/
 	
 	@Test
-	public void HIProfileAddBuildingButtonCheck()
+	public void HIProfileAddBuildingButtonCheck() throws InterruptedException
 	{
 		try
 		{
+			
+			HI_Login back = new HI_Login();
+			driver = back.hiLogin();
+			
 			driver.findElement(By.xpath("//img[contains(@src,'avatar.png')]")).click();
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("//li[contains(@class,'linkProf')]/a[1]")).click();
@@ -65,6 +69,10 @@ public class Profile_Addbuliding_clickable
 			 //TODO Auto-generated catch block
 			e.printStackTrace();
 		} 
+		
+		/*driver.findElement(By.xpath("//img[contains(@src,'avatar.png')]")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//li[contains(@class,'linkProf')]/a[2]")).click();*/
 	}
 	
 	

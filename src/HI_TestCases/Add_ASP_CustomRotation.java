@@ -25,7 +25,7 @@ import org.testng.asserts.SoftAssert;
 import Design1.Constant_Acuity;
 import Design1.Data_Acuity;
 
-public class Add_ASP_CustomRotation 
+public class Add_ASP_CustomRotation extends Display_Selectionlogic
 {
 	WebDriver driver;
 	private java.util.List<WebElement> option; 
@@ -42,11 +42,16 @@ public class Add_ASP_CustomRotation
 	}*/
 	
 	//To check whether Add ASP button is displayed, clickable and ASP is added in the Custom Rotation section
-	@Test(priority=9)
-	public void CustomRotationSection()
+	@Test
+	public WebDriver CustomRotationSection()
 	{
 		try
 		{
+			
+		Display_Selectionlogic custom = new Display_Selectionlogic();
+		driver = custom.VerifySelectionLogicPage();
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		
 		WebElement ele11=driver.findElement(By.xpath("//h2[@class='font26'][contains(text(), 'Custom Rotation ')]"));
 		String t9=ele11.getText();
 		System.out.println("Title:"+ t9);
@@ -75,11 +80,13 @@ public class Add_ASP_CustomRotation
 		System.out.println("Button name is:"+ t11);
 		s9.assertEquals(ele13, "Remove");
 		Reporter.log("Remove button is present:Hence ASP has been added in the Custom Rotation section", true);
+		return driver;
 		}
 		catch (Exception e) 
 		{
 			 //TODO Auto-generated catch block
 			e.printStackTrace();
+			return null;
 		} 
 	}
 }

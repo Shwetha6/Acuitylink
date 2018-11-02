@@ -33,6 +33,15 @@ public class Pages_Clickable_BuildinglistPage
 	{
 		try
 		{
+			
+			HI_Login pages = new HI_Login();
+			driver = pages.hiLogin();
+	driver.findElement(By.xpath("//img[contains(@src,'avatar.png')]")).click();
+	Thread.sleep(3000);
+	driver.findElement(By.xpath("//li[contains(@class,'linkProf')]/a[1]")).click();
+	Thread.sleep(3000);
+	driver.findElement(By.xpath("//button[@class='btn btn-default aq-btn marR15 btn01 aq-btn-1024'][contains(text(),'Add Building Location')]")).click();
+	Thread.sleep(3000);
 	driver.findElement(By.xpath("//a[@class='paginate_button '][contains(text(),'2')]")).click();
 	Thread.sleep(2000);
 	driver.findElement(By.xpath("//a[@class='paginate_button '][contains(text(),'1')]")).click();

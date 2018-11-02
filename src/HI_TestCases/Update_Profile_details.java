@@ -12,7 +12,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-public class Update_Profile_details 
+public class Update_Profile_details extends HI_Login
 {
 	WebDriver driver;
 	private java.util.List<WebElement> option; 
@@ -23,9 +23,14 @@ public class Update_Profile_details
 	{
 		try
 		{
-			Thread.sleep(2000);
-			driver.findElement(By.xpath("//img[contains(@src, '../images/leftArrow.png')]")).click();
-			Thread.sleep(4000);
+			
+			HI_Login update = new HI_Login();
+			driver = update.hiLogin();
+			
+			driver.findElement(By.xpath("//img[contains(@src,'avatar.png')]")).click();
+			Thread.sleep(3000);
+			driver.findElement(By.xpath("//li[contains(@class,'linkProf')]/a[1]")).click();
+			Thread.sleep(3000);
 			driver.findElement(By.xpath("//button[@class='btn aq-btn'][contains(text(), 'Edit Information')]")).click();
 			Thread.sleep(2000);
 			driver.findElement(By.xpath("(//span[@class='switchToggle-handle switchbar'][contains(text(), '|||')])[1]")).click();

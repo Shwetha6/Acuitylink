@@ -25,7 +25,7 @@ import org.testng.asserts.SoftAssert;
 import Design1.Constant_Acuity;
 import Design1.Data_Acuity;
 
-public class Activate_Deactivate_Building 
+public class Activate_Deactivate_Building extends HI_Login
 {
 	WebDriver driver;
 	private java.util.List<WebElement> option; 
@@ -47,6 +47,14 @@ public class Activate_Deactivate_Building
 	{
 		try
 		{
+			
+			HI_Login add = new HI_Login();
+			driver = add.hiLogin();
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			
+		driver.findElement(By.xpath("//img[contains(@src,'avatar.png')]")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//li[contains(@class,'linkProf')]/a[1]")).click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//button[@class='btn btn-default aq-btn marR15 btn01 aq-btn-1024'][contains(text(),'Add Building Location')]")).click();
 		Thread.sleep(3000);

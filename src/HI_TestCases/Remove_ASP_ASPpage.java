@@ -12,18 +12,22 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-public class Remove_ASP_ASPpage 
+public class Remove_ASP_ASPpage extends ASP_Page
 {
 	WebDriver driver;
 	private java.util.List<WebElement> option; 
 	WebDriverWait wait;
 	
 	//To Remove ASP service provider using 'Remove' button in the ASP page
-	@Test(priority=4)
+	@Test
 	public void RemoveAsp() throws InterruptedException
 	{
 		try
 		{
+			
+			ASP_Page rem = new ASP_Page();
+			driver = rem.VerifyAspPage();
+			
 	driver.findElement(By.xpath("//button[@class='btn aq-btn wauto aspRemove'][contains(text(), 'Remove')]")).click();
 	Thread.sleep(3000);
 	driver.findElement(By.xpath("//div[@class='bootbox-body'][contains(text(), 'Are you sure that you want to remove?')]")).click();

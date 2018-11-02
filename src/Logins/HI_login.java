@@ -49,15 +49,20 @@ public class HI_login
 		try
 		{
 			Data_Acuity.setExcelFile(Constant_Acuity.Excelpath,"Sheet1");
-			String email2=Data_Acuity.getCellData(2, 12); 
-			String password2=Data_Acuity.getCellData(2, 13);
+			String email1=Data_Acuity.getCellData(2, 12); 
+			String password1=Data_Acuity.getCellData(2, 13);
 			wait = new WebDriverWait(driver,6);
 		 
 		
-		driver.findElement(By.id("samlUserEmail")).sendKeys(email2);
+		/*driver.findElement(By.id("samlUserEmail")).sendKeys(email2);
 		driver.findElement(By.xpath("//button[@class='btn aq-btn'][contains(text(), 'Next')]")).click();
 		driver.findElement(By.id("password")).sendKeys(password2);
+		driver.findElement(By.id("loginBtnId")).click();*/
+		
+		driver.findElement(By.id("email")).sendKeys(email1);
+		driver.findElement(By.id("password")).sendKeys(password1);
 		driver.findElement(By.id("loginBtnId")).click();
+		Thread.sleep(3000);
 		
 		wait.until(ExpectedConditions.titleContains("Acuity Link"));
 		String t= driver.getTitle();
@@ -168,7 +173,7 @@ public class HI_login
 	----------------------------------------------------------------------------------------------	
 		
 		////To check whether "Existing Ambulance Service Providers" page is displayed
-				@Test(priority=3)
+				@Test(priority=4)
 				public void AddExistingAsp() throws InterruptedException
 				{
 					try
@@ -196,7 +201,7 @@ public class HI_login
 					---------------------------------------------------------------------------------------------------------	
 						
 						//To Remove ASP service provider using 'Remove' button in the ASP page
-						@Test(priority=4)
+						@Test(priority=5)
 						public void RemoveAsp() throws InterruptedException
 						{
 							try
@@ -224,7 +229,7 @@ public class HI_login
 		         -------------------------------------------------------------------------------------
 		                
 		              //To Remove ASP service provider using 'Remove' button in the ASP detail page
-						@Test(priority=5)
+						@Test(priority=6)
 						public void RemoveAspFromAspdetailPage() throws InterruptedException
 						{
 							try
@@ -256,7 +261,7 @@ public class HI_login
 		   -----------------------------------------------------------------------------------------------------             
 		                
 		                //To check whether pagination is working
-						@Test(priority=6)
+						@Test(priority=7)
 						public void Pagination() throws InterruptedException
 						{
 							try
@@ -277,7 +282,7 @@ public class HI_login
 				
 				
 				//To check whether selection logic page is displayed
-				@Test(priority=7)
+				@Test(priority=8)
 				public void VerifySelectionLogicPage()
 				{
 					try
@@ -304,7 +309,7 @@ public class HI_login
 			
 			
 			   //To check whether Add ASP button is displayed, clickable and ASP is added in the Exclusive Ambulance section
-				@Test(priority=8)
+				@Test(priority=9)
 				public void ExclusiveAmbulanceSection()
 				{
 					try
@@ -348,7 +353,7 @@ public class HI_login
 					
 					
 					//To check whether Add ASP button is displayed, clickable and ASP is added in the Custom Rotation section
-				@Test(priority=9)
+				@Test(priority=10)
 				public void CustomRotationSection()
 				{
 					try
@@ -393,7 +398,7 @@ public class HI_login
 					
 					
 					//Check whether Set % of Allotment button is present, clickable and check if the list of ASP's are listed
-				@Test(priority=10)
+				@Test(priority=11)
 				public void SetPercentageListAsp()
 				{
 					try
@@ -430,7 +435,7 @@ public class HI_login
 					
 					
 					 //To check whether Add ASP button is displayed, clickable and ASP is added in the Order Number and Even Rotation section
-				@Test(priority=11)
+				@Test(priority=12)
 				public void OrderNumberEvenRotationSection()
 				{
 					try
@@ -474,7 +479,7 @@ public class HI_login
 				
 				
 				//To check whether Add ASP button is present in the Available appropriate ASP section
-				@Test(priority=12)
+				@Test(priority=13)
 				public void AvailableAppropriateASPSection()
 				{
 					try
@@ -503,7 +508,7 @@ public class HI_login
 				
 				
 				//To check whether profile is displayed and add building block button is clickable
-				@Test(priority=13)
+				@Test(priority=14)
 				public void HIProfileAddBuildingButtonCheck()
 				{
 					try
@@ -547,7 +552,7 @@ public class HI_login
 				
 				
 				//To check whether add building block and back button functionality works
-				@Test(priority=14)
+				@Test(priority=15)
 				public void HIProfileAddBuildingLocation()
 				{
 					try
@@ -608,7 +613,7 @@ public class HI_login
 						
 					
 				//To check whether edit building block functionality works
-				@Test(priority=15)
+				@Test(priority=16)
 				public void HiEditBuildingLocation()
 				{
 					try
@@ -686,7 +691,7 @@ public class HI_login
 			-----------------------------------------------------------------------------------------------------
 			
 				//To check whether buildings can be deactivated and activated
-				@Test(priority=16)
+				@Test(priority=17)
 				public void HiDeactivateBuilding()
 				{
 					try
@@ -736,7 +741,7 @@ public class HI_login
 				
 				
 				//To check whether pages are clickable in Building list page
-				@Test(priority=17)
+				@Test(priority=18)
 				public void HiBuildingPagination()
 				{
 					try
@@ -759,7 +764,7 @@ public class HI_login
 	-------------------------------------------------------------------------------------------
 				
 				//To check whether profile details are updating
-				@Test(priority=18)
+				@Test(priority=19)
 				public void HiEditProfileDetails()
 				{
 					try
@@ -804,7 +809,7 @@ public class HI_login
 			
 				
 				//To check whether image is uploaded in the profile section
-				@Test(priority=19)
+				@Test(priority=)
 				public void HiUploadPicInProfile()
 				{
 					try
